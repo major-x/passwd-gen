@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Passwortgenerator</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="master">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Masterpasswort</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="showPw">
+        <property name="text">
+         <string>zeigen</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="domain">
+      <property name="placeholderText">
+       <string>Domain (z.B. ebay.de)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="desc">
+      <property name="placeholderText">
+       <string>weitere Beschreibung (z.B. 2014)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="pwd">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="pwdLen">
+        <property name="value">
+         <number>12</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QComboBox" name="algorithm">
+        <item>
+         <property name="text">
+          <string>Md4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Md5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha224</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha256</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha384</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha512</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha3_224</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha3_256</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha3_384</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sha3_512</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="generateButton">
+        <property name="text">
+         <string>generieren</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="copyButton">
+        <property name="text">
+         <string>kopieren</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+   <zorder>desc</zorder>
+   <zorder>domain</zorder>
+   <zorder>verticalSpacer</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pwdLen</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>generateButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>440</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

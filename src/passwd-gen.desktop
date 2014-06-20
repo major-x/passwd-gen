@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Passwortgen.
+Comment=Generiert ein Passwort
+Exec=/usr/bin/passwd-gen
+Type=Application
+Icon=passwd-gen
